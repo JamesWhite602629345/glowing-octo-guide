@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  workflow_dispatch:  
+
+jobs:
+  static-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run
+        run: |
+          for i in {1..15}
+          do
+            dd if=/dev/zero of=/dev/null bs=1M count=100
+            sleep 60
+          done
