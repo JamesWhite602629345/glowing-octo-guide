@@ -6,6 +6,9 @@ on:
 jobs:
   static-analysis:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ci: [jo1,jo2,jo3,jo4,jo5,jo6,jo7,jo8,jo9,jo10]
 
     steps:
       - name: Checkout source code
